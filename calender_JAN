@@ -9,22 +9,6 @@
         android:strokeWidth="1"
         android:pathData="M0.5 10c0-5.25 4.25-9.5 9.5-9.5h280c5.25 0 9.5 4.25 9.5 9.5v270c0 5.25-4.25 9.5-9.5 9.5h-280c-5.25 0-9.5-4.25-9.5-9.5z"/>
     <path
-        android:fillColor="#FFCBADE9"
-        android:strokeColor="#FFCAC4D0"
-        android:strokeWidth="1"
-        android:pathData="M226.5 18.5A12 12 0 1 0 226.5 42.5 12 12 0 1 0 226.5 18.5z"/>
-    <path
-        android:fillColor="#FFFFFFFF"
-        android:pathData="M221.5 31.81v-1.35l8.01-3.89v1.84l-5.92 2.7 0.06-0.1v0.25l-0.06-0.1 5.92 2.7v1.84l-8.02-3.89Z"/>
-    <path
-        android:fillColor="#FFCBADE9"
-        android:strokeColor="#FFCAC4D0"
-        android:strokeWidth="1"
-        android:pathData="M267.5 18.5A12 12 0 1 0 267.5 42.5 12 12 0 1 0 267.5 18.5z"/>
-    <path
-        android:fillColor="#FFFFFFFF"
-        android:pathData="M272.51 31.81l-8.02 3.89v-1.85l5.92-2.7-0.06 0.11V31l0.06 0.11-5.92-2.7v-1.84l8.02 3.89v1.35Z"/>
-    <path
         android:fillColor="#FFFFFFFF"
         android:pathData="M15 65c0-5.52 4.48-10 10-10h250c5.52 0 10 4.48 10 10v200c0 5.52-4.48 10-10 10h-250c-5.52 0-10-4.48-10-10z"/>
     <path
