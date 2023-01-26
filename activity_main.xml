@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/writepage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="writepage1 실행"></Button>
+
+    <Button
+        android:id="@+id/review_writepage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ReviewWrite 실행"></Button>
+
+    <Button
+        android:id="@+id/review_page_deatil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ReviewPageDetail 실행"></Button>
+
+    <Button
+        android:id="@+id/search_page"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search 실행"></Button>
+</LinearLayout>
