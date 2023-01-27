@@ -49,7 +49,7 @@
         <!-- 메인화면 페이지 -->
         <activity
             android:name=".MainActivity"
-            android:exported="false">
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

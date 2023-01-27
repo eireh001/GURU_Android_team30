@@ -18,18 +18,21 @@
     <EditText
         android:id="@+id/Sign_up_name"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="38dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="205dp"
-        android:layout_marginEnd="90dp"
-        android:backgroundTint="@color/gray"
-        android:inputType="text"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="213dp"
+        android:layout_marginEnd="91dp"
+        android:background="@null"
+        android:hint="이름"
+        android:inputType="textShortMessage"
+        android:privateImeOptions="defaultInput-mode=korean"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColorHighlight="@color/gray" />
+        android:textColorHighlight="@color/gray"
+        android:textSize="14sp" />
 
     <!-- 이메일 -->
     <ImageView
@@ -45,18 +48,20 @@
     <EditText
         android:id="@+id/Sign_up_email"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="38dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="89dp"
-        android:layout_marginTop="278dp"
-        android:layout_marginEnd="90dp"
-        android:backgroundTint="@color/gray"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="289dp"
+        android:layout_marginEnd="89dp"
+        android:background="@null"
+        android:hint="이메일"
         android:inputType="textEmailAddress"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColorHighlight="@color/gray" />
+        android:textColorHighlight="@color/gray"
+        android:textSize="14sp" />
 
     <!-- 비밀번호 -->
     <ImageView
@@ -72,20 +77,22 @@
     <EditText
         android:id="@+id/Sign_up_pw"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="38dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="91dp"
-        android:layout_marginTop="360dp"
-        android:layout_marginEnd="88dp"
-        android:backgroundTint="@color/gray"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="369dp"
+        android:layout_marginEnd="89dp"
+        android:background="@null"
+        android:hint="비밀번호"
         android:inputType="textPassword"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColorHighlight="@color/gray" />
+        android:textColorHighlight="@color/gray"
+        android:textSize="14sp" />
 
-<!-- 비밀번호 확인 -->
+    <!-- 비밀번호 확인 -->
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -97,29 +104,31 @@
         android:src="@drawable/sign_up_pw_check_box" />
 
     <EditText
-        android:id="@+id/Sign_up_chkpw"
+        android:id="@+id/Sign_up_chkPw"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="439dp"
-        android:layout_marginEnd="89dp"
-        android:backgroundTint="@color/gray"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="447dp"
+        android:layout_marginEnd="91dp"
+        android:background="@null"
+        android:hint="비밀번호 확인 "
         android:inputType="textPassword"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColorHighlight="@color/gray" />
+        android:textColorHighlight="@color/gray"
+        android:textSize="14sp" />
 
+    <!--가입하기 버튼-->
     <ImageButton
-        android:id="@+id/Sign_up"
+        android:id="@+id/Sign_up_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="140dp"
         android:background="@drawable/sign_up_button" />
-
 
 </RelativeLayout>
