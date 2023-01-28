@@ -34,21 +34,6 @@
         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
         tools:textSize="14sp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/userList"
-        android:layout_width="match_parent"
-        android:layout_height="550dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        tools:listitem="@layout/row_category"
-        android:layout_below="@+id/search_edit"/>
-
-<!--    <LinearLayout-->
-<!--        android:id="@+id/books"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="500dp"-->
-<!--        android:layout_below="@+id/search_edit"-->
-<!--        android:orientation="vertical"></LinearLayout>-->
 
 
     <ImageButton
@@ -59,7 +44,7 @@
         android:layout_marginLeft="55dp"
         android:layout_marginTop="548dp"
         android:layout_marginRight="-94dp"
-        android:background="@drawable/calender_button"
+        android:background="@drawable/calender_navi_button"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -70,7 +55,7 @@
         android:layout_marginLeft="190dp"
         android:layout_marginTop="548dp"
         android:layout_marginRight="-94dp"
-        android:background="@drawable/main_button"
+        android:background="@drawable/main_navi_button"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"/>
 
     <ImageButton
@@ -81,7 +66,7 @@
         android:layout_marginLeft="320dp"
         android:layout_marginTop="548dp"
         android:layout_marginRight="-94dp"
-        android:background="@drawable/writing_button"
+        android:background="@drawable/writing_navi_button"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
 </RelativeLayout>

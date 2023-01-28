@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReviewWrite"
+    android:background="@drawable/review_page_write">
+
+    <View
+        android:id="@+id/book_image"
+        android:layout_width="90dp"
+        android:layout_height="108dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="161dp"
+        android:layout_marginTop="73dp" />
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="104dp"
+        android:layout_height="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="180dp"
+        android:background="@null"
+        android:gravity="center"
+        android:hint="제목 작성란"
+        android:text="@string/subhead_string"
+        android:textColor="@color/subhead_color"
+        android:textSize="14sp"
+        tools:ignore="TouchTargetSizeCheck"
+        android:maxLines="1"/>
+
+
+    <EditText
+        android:id="@+id/writer"
+        android:layout_width="104dp"
+        android:layout_height="37dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="205dp"
+        android:background="@null"
+        android:gravity="center"
+        android:hint="작가 작성란"
+        android:text="@string/subhead_ek1_string"
+        android:textColor="@color/subhead_color"
+        android:textSize="14sp"
+        tools:ignore="TouchTargetSizeCheck"
+        android:maxLines="1"/>
+
+
+    <EditText
+        android:id="@+id/publisher"
+        android:layout_width="104dp"
+        android:layout_height="37dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginLeft="282dp"
+        android:layout_marginTop="205dp"
+        android:background="@null"
+        android:gravity="center"
+        android:hint="출판사 작성란"
+        android:text="@string/subhead_ek2_string"
+        android:textColor="@color/subhead_color"
+        android:textSize="14sp"
+        tools:ignore="TouchTargetSizeCheck"
+        android:maxLines="1"/>
+
+
+    <TextView
+        android:id="@+id/date_reading"
+        android:layout_width="84dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="233dp"
+        android:gravity="center"
+        android:hint="20nn.nn.nn"
+        android:text="@string/subhead_ek3_string"
+        android:textColor="@color/subhead_color"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/date_writing"
+        android:layout_width="84dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginLeft="294dp"
+        android:layout_marginTop="233dp"
+        android:gravity="center"
+        android:hint="20nn.nn.nn"
+        android:text="@string/subhead_ek4_string"
+        android:textColor="@color/subhead_color"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/review_eval"
+        android:layout_width="170dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="272dp"
+        android:layout_marginEnd="44dp"
+        android:hint="입력"
+        android:maxLength="10"
+        android:maxLines="1"
+        android:textSize="8sp" />
+
+
+    <ImageButton
+        android:id="@+id/review_long"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="141dp"
+        android:layout_marginBottom="268dp"
+        android:background="@drawable/review_long"
+        android:fillColor="#FF1D192B" />
+
+    <ImageButton
+        android:id="@+id/review_funny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="321dp"
+        android:layout_marginBottom="268dp"
+        android:background="@drawable/review_funny"
+        android:fillColor="#FF1D192B" />
+
+    <ImageButton
+        android:id="@+id/review_short"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="268dp"
+        android:background="@drawable/review_short"
+        android:fillColor="#FF1D192B" />
+
+    <ImageButton
+        android:id="@+id/review_correct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginBottom="268dp"
+        android:background="@drawable/review_correct"
+        android:fillColor="#FF1D192B" />
+
+    <ImageButton
+        android:id="@+id/review_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="265dp"
+        android:layout_marginBottom="268dp"
+        android:background="@drawable/review_ok"
+        android:fillColor="#FF1D192B" />
+
+    <ImageButton
+        android:id="@+id/review_not"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="210dp"
+        android:layout_marginBottom="268dp"
+        android:background="@drawable/review_not"
+        android:fillColor="#FF1D192B" />
+
+    <EditText
+        android:id="@+id/read_record"
+        android:layout_width="359dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="350dp"
+        android:background="@null"
+        android:gravity="top"
+        android:hint="읽은 독서에 대한 기록을 해주세요."
+        android:maxLines="8"
+        android:textSize="14sp" />
+
+    <ImageButton
+        android:id="@+id/check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="306dp"
+        android:layout_marginTop="500dp"
+        android:background="@drawable/button"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:textColor="@color/label_text_color"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+
+    <ImageButton
+        android:id="@+id/calender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="false"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="548dp"
+        android:layout_marginRight="-94dp"
+        android:background="@drawable/calender_navi_button"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/house"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="false"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="548dp"
+        android:layout_marginRight="-94dp"
+        android:background="@drawable/main_navi_button"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"/>
+
+    <ImageButton
+        android:id="@+id/writing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="false"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="548dp"
+        android:layout_marginRight="-94dp"
+        android:background="@drawable/writing_navi_button"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+</RelativeLayout>

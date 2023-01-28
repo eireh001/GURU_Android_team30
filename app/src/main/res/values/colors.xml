@@ -8,4 +8,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#999999</color>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="_bg__write_ek2_color">#FFFFFF</color>
+    <color name="________color">#000000</color>
+    <color name="divider_color">#CAC4D0</color>
+    <color name="subhead_color">#1C1B1F</color>
+    <color name="label_text_color">#6750A4</color>
 </resources>
