@@ -63,15 +63,15 @@
                 android:layout_alignParentTop="true"
                 android:layout_gravity="center_horizontal|center"
                 android:layout_marginLeft="100dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="93dp"
+                android:background="@null"
                 android:gravity="center"
                 android:hint="제목 작성란"
-                android:background="@null"
+                android:maxLines="1"
                 android:text="@string/subhead_string"
                 android:textColor="@color/subhead_color"
                 android:textSize="14sp"
-                tools:ignore="TouchTargetSizeCheck"
-                android:maxLines="1"/>
+                tools:ignore="TouchTargetSizeCheck" />
 
 
             <EditText
@@ -80,15 +80,15 @@
                 android:layout_height="37dp"
                 android:layout_gravity="center_horizontal|center"
                 android:layout_marginLeft="100dp"
-                android:layout_marginTop="105dp"
+                android:layout_marginTop="120dp"
+                android:background="@null"
                 android:gravity="center"
                 android:hint="작가 작성란"
-                android:background="@null"
+                android:maxLines="1"
                 android:text="@string/subhead_ek1_string"
                 android:textColor="@color/subhead_color"
                 android:textSize="14sp"
-                tools:ignore="TouchTargetSizeCheck"
-                android:maxLines="1"/>
+                tools:ignore="TouchTargetSizeCheck" />
 
 
             <EditText
@@ -97,15 +97,15 @@
                 android:layout_height="37dp"
                 android:layout_gravity="center_horizontal|center"
                 android:layout_marginLeft="282dp"
-                android:layout_marginTop="105dp"
+                android:layout_marginTop="120dp"
+                android:background="@null"
                 android:gravity="center"
                 android:hint="출판사 작성란"
-                android:background="@null"
+                android:maxLines="1"
                 android:text="@string/subhead_ek2_string"
                 android:textColor="@color/subhead_color"
                 android:textSize="14sp"
-                tools:ignore="TouchTargetSizeCheck"
-                android:maxLines="1"/>
+                tools:ignore="TouchTargetSizeCheck" />
 
 
             <TextView
@@ -114,7 +114,7 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal|center"
                 android:layout_marginLeft="112dp"
-                android:layout_marginTop="135dp"
+                android:layout_marginTop="151dp"
                 android:gravity="center"
                 android:hint="20nn.nn.nn"
                 android:text="@string/subhead_ek3_string"
@@ -128,7 +128,7 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal|center"
                 android:layout_marginLeft="294dp"
-                android:layout_marginTop="135dp"
+                android:layout_marginTop="151dp"
                 android:gravity="center"
                 android:hint="20nn.nn.nn"
                 android:text="@string/subhead_ek4_string"
@@ -138,11 +138,11 @@
             <EditText
                 android:id="@+id/read_record"
                 android:layout_width="360dp"
-                android:layout_height="380dp"
+                android:layout_height="360dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="28dp"
-                android:layout_marginTop="185dp"
+                android:layout_marginTop="200dp"
                 android:background="@null"
                 android:gravity="top"
                 android:hint="읽은 독서에 대한 기록을 해주세요."
@@ -151,17 +151,17 @@
 
             </EditText>
 
-                <ImageButton
-                    android:id="@+id/check"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="306dp"
-                    android:layout_marginTop="500dp"
-                    android:background="@drawable/button"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:textColor="@color/label_text_color"
-                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            <ImageButton
+                android:id="@+id/check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="305dp"
+                android:layout_marginTop="569dp"
+                android:background="@drawable/button"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:textColor="@color/label_text_color"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <ImageButton
                 android:id="@+id/calender"
@@ -169,7 +169,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="false"
                 android:layout_marginLeft="55dp"
-                android:layout_marginTop="548dp"
+                android:layout_marginTop="620dp"
                 android:layout_marginRight="-94dp"
                 android:background="@drawable/calender_navi_button"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
@@ -180,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="false"
                 android:layout_marginLeft="190dp"
-                android:layout_marginTop="548dp"
+                android:layout_marginTop="620dp"
                 android:layout_marginRight="-94dp"
                 android:background="@drawable/main_navi_button"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
@@ -191,7 +191,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="false"
                 android:layout_marginLeft="320dp"
-                android:layout_marginTop="548dp"
+                android:layout_marginTop="620dp"
                 android:layout_marginRight="-94dp"
                 android:background="@drawable/writing_navi_button"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />

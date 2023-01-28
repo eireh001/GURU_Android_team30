@@ -37,7 +37,7 @@ class Search : AppCompatActivity() {
         }
 
         house.setOnClickListener {
-            Toast.makeText(this, "house", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         writing.setOnClickListener {

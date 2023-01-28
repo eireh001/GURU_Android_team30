@@ -11,6 +11,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var cal_navi : ImageButton
     lateinit var write_navi : ImageButton
 
+    lateinit var search_icon : ImageButton
+    lateinit var write_navi_btn : ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -19,10 +22,28 @@ class MainActivity : AppCompatActivity() {
         cal_navi = findViewById(R.id.Cal_navi_btn)
         write_navi = findViewById(R.id.write_navi_btn)
 
+        search_icon = findViewById(R.id.search_icon)
+
+        write_navi_btn = findViewById(R.id.write_navi_btn)
+
+
+        // 검색 아이콘 클릭
+        search_icon.setOnClickListener {
+            var intent = Intent(this, Search::class.java)
+            startActivity(intent)
+        }
+
         //네비게이션 바 클릭
         main_navi.setOnClickListener {
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
+        //작성 아이콘 클릭
+        write_navi_btn.setOnClickListener {
+            var intent = Intent(this, Writepage::class.java)
+            startActivity(intent)
+        }
+
     }
 }

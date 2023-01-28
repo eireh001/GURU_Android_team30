@@ -39,7 +39,7 @@ class ReviewPageDetail : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_review_page_detail)
+        setContentView(R.layout.activity_review_page_datail)
 
         writer = findViewById(R.id.writer)
         publisher = findViewById(R.id.publisher)
@@ -71,7 +71,7 @@ class ReviewPageDetail : AppCompatActivity() {
         }
 
         house.setOnClickListener {
-            Toast.makeText(this, "house", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         writing.setOnClickListener {

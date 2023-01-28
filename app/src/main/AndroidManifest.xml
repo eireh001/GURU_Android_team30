@@ -54,6 +54,42 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <!--검색 페이지-->
+        <activity
+            android:name=".Search"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <!--리뷰조회 페이지-->
+        <activity
+            android:name=".ReviewPageDetail"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <!--리뷰작성 페이지-->
+        <activity
+            android:name=".ReviewWrite"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <!--감상문작성 페이지-->
+        <activity
+            android:name=".Writepage"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
     </application>
 
 </manifest>
