@@ -8,32 +8,52 @@
     android:background="@drawable/search">
 
     <!--상단 검색창-->
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="58dp"
-        android:background="@drawable/search_icon"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-    <EditText
-        android:id="@+id/search_edit"
-        android:layout_width="305dp"
-        android:layout_height="24dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="54dp"
-        android:background="@null"
-        android:hint="검색"
-        android:inputType="text"
-        android:maxLines="1"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
+        android:layout_marginHorizontal="2dp"
+        android:layout_marginTop="35dp"
+        android:iconifiedByDefault="false"
+        android:queryHint="리뷰를 입력해주세요"
+        android:searchIcon="@drawable/search_icon"
+        android:queryBackground="@null"
         tools:textSize="14sp" />
+
+    <ListView
+        android:id="@+id/reviewList"
+        android:layout_width="match_parent"
+        android:layout_height="520dp"
+        android:layout_below="@+id/searchView"/>
+    
+<!--    <ImageButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentLeft="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginStart="25dp"-->
+<!--        android:layout_marginLeft="22dp"-->
+<!--        android:layout_marginTop="58dp"-->
+<!--        android:background="@drawable/search_icon"-->
+<!--        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/search_edit"-->
+<!--        android:layout_width="305dp"-->
+<!--        android:layout_height="24dp"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="50dp"-->
+<!--        android:layout_marginTop="54dp"-->
+<!--        android:background="@null"-->
+<!--        android:hint="검색"-->
+<!--        android:inputType="text"-->
+<!--        android:maxLines="1"-->
+<!--        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"-->
+<!--        tools:textSize="14sp" />-->
 
     <!-- 네비게이션 바 -->
     <ImageButton

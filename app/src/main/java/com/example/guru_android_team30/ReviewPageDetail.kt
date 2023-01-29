@@ -3,38 +3,39 @@ package com.example.guru_android_team30
 import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 import java.lang.Exception
 
 class ReviewPageDetail : AppCompatActivity() {
 
-    lateinit var writer : EditText
-    lateinit var publisher : EditText
+    lateinit var writer : TextView
+    lateinit var publisher : TextView
     lateinit var genre : EditText
     lateinit var date_publishing : TextView
 
-//    평가 TextView
-   lateinit var eval1 : TextView
-    lateinit var score1 : TextView
-    lateinit var review1 : TextView
+    lateinit var layout : LinearLayout
 
-    lateinit var eval2 : TextView
-    lateinit var score2 : TextView
-    lateinit var review2 : TextView
-
-    lateinit var eval3 : TextView
-    lateinit var score3 : TextView
-    lateinit var review3 : TextView
-//    평가 TextView
-    
     lateinit var calender : ImageButton
     lateinit var house : ImageButton
     lateinit var writing : ImageButton
+
+    // 리뷰 DB
+    lateinit var myHelper: ReviewWrite.ReviewDB
+    lateinit var sqlDB : SQLiteDatabase
+
+    lateinit var str_title : String
+    lateinit var str_writer : String
+    lateinit var str_publisher : String
+    lateinit var str_datepublishing : String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,24 +47,59 @@ class ReviewPageDetail : AppCompatActivity() {
         genre = findViewById(R.id.genre)
         date_publishing = findViewById(R.id.date_publishing)
 
-//        평가 TextView id
-        eval1 = findViewById(R.id.eval1)
-        score1 = findViewById(R.id.score1)
-        review1 = findViewById(R.id.review1)
 
-        eval2 = findViewById(R.id.eval2)
-        score2 = findViewById(R.id.score2)
-        review2 = findViewById(R.id.review2)
-
-        eval3 = findViewById(R.id.eval3)
-        score3 = findViewById(R.id.score3)
-        review3 = findViewById(R.id.review3)
-//        평가 TextView id
+        layout = findViewById(R.id.bookRecyclerView)
 
         calender = findViewById(R.id.calender)
         house = findViewById(R.id.house)
         writing = findViewById(R.id.writing)
 
+        val intent = intent
+        str_title = intent.getStringExtra("intent_name").toString()
+
+        myHelper = ReviewWrite().ReviewDB(this)
+        sqlDB = myHelper.readableDatabase
+
+        var cursor : Cursor
+        cursor = sqlDB.rawQuery("SELECT * FROM REVIEW WHERE title = '"+str_title+"';", null)
+
+        if (cursor.moveToNext()) {
+            str_writer = cursor.getString(cursor.getColumnIndex("writer")).toString()
+            str_publisher = cursor.getString((cursor.getColumnIndex("publisher"))).toString()
+//            eval = cursor.getInt((cursor.getColumnIndex("eval")))
+//            str_review = cursor.getString((cursor.getColumnIndex("review_record"))).toString()
+            str_datepublishing = cursor.getString((cursor.getColumnIndex("date_publishing"))).toString()
+        }
+
+        var num : Int = 0
+        while(cursor.moveToNext()) {
+            var eval = cursor.getInt((cursor.getColumnIndex("eval")))
+            var str_review = cursor.getString((cursor.getColumnIndex("review_record"))).toString()
+
+            var layout_item : LinearLayout = LinearLayout(this)
+            layout_item.orientation = LinearLayout.VERTICAL
+            layout_item.id = num
+
+            var tvEval : TextView = TextView(this)
+            tvEval.text = "평가   " + eval.toString()
+            layout_item.addView(tvEval)
+
+            var tvReview : TextView = TextView(this)
+            tvReview.text = str_review + "\n"
+            layout_item.addView(tvReview)
+
+
+            layout.addView(layout_item)
+            num++;
+        }
+
+        cursor.close()
+        sqlDB.close()
+        myHelper.close()
+
+        writer.text = str_writer
+        publisher.text = str_publisher
+        date_publishing.text = str_datepublishing
 
 
         calender.setOnClickListener {

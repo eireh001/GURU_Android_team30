@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/review_page_detail_nn">
 
 
@@ -13,7 +14,7 @@
         android:layout_marginLeft="513dp"
         android:layout_marginTop="90dp"/>
 
-    <EditText
+    <TextView
         android:id="@+id/writer"
         android:layout_width="104dp"
         android:layout_height="37dp"
@@ -28,7 +29,7 @@
         android:textColor="@color/subhead_color"
         android:textSize="14sp" />
 
-    <EditText
+    <TextView
         android:id="@+id/publisher"
         android:layout_width="104dp"
         android:layout_height="37dp"
@@ -97,109 +98,129 @@
             android:layout_marginLeft="5dp"
             android:layout_marginEnd="5dp">
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/review3"
-                    android:layout_width="326dp"
-                    android:layout_height="35dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="132dp"
-                    android:maxLines="2"
-                    android:text="He'll want to use your yacht, and I don't want this thing smelling like fish."
-                    android:viewportWidth="326"
-                    android:viewportHeight="31" />
-
-                <TextView
-                    android:id="@+id/eval1"
-                    android:layout_width="26dp"
-                    android:layout_height="17dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="0dp"
-                    android:gravity="center_vertical"
-                    android:text="@string/header"
-                    android:textAppearance="@style/header" />
-
-                <TextView
-                    android:id="@+id/score1"
-                    android:layout_width="21dp"
-                    android:layout_height="15dp"
-                    android:layout_marginStart="56dp"
-                    android:layout_marginTop="0dp"
-                    android:hint="5.4"
-                    android:text="" />
-
-                <TextView
-                    android:id="@+id/review1"
-                    android:layout_width="326dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="18dp"
-                    android:maxLines="2"
-                    android:text="He'll want to use your yacht, and I don't want this thing smelling like fish."
-                    android:viewportWidth="326"
-                    android:viewportHeight="31" />
-
-                <TextView
-                    android:id="@+id/eval2"
-                    android:layout_width="26dp"
-                    android:layout_height="17dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="60dp"
-                    android:gravity="center_vertical"
-                    android:text="@string/header"
-                    android:textAppearance="@style/header" />
-
-                <TextView
-                    android:id="@+id/score2"
-                    android:layout_width="21dp"
-                    android:layout_height="15dp"
-                    android:layout_marginStart="56dp"
-                    android:layout_marginTop="60dp"
-                    android:hint="5.2"
-                    android:text="" />
-
-                <TextView
-                    android:id="@+id/review2"
-                    android:layout_width="326dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="77dp"
-                    android:maxLines="2"
-                    android:text="He'll want to use your yacht, and I don't want this thing smelling like fish."
-                    android:viewportWidth="326"
-                    android:viewportHeight="31" />
-
-                <TextView
-                    android:id="@+id/eval3"
-                    android:layout_width="26dp"
-                    android:layout_height="17dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="115dp"
-                    android:gravity="center_vertical"
-                    android:text="@string/header"
-                    android:textAppearance="@style/header" />
-
-                <TextView
-                    android:id="@+id/score3"
-                    android:layout_width="21dp"
-                    android:layout_height="15dp"
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/bookRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="525dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginStart="56dp"
-                    android:layout_marginTop="115dp"
-                    android:hint="5.1"
-                    android:text="" />
-            </RelativeLayout>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+            </ScrollView>
+
+
+            <!--            <RelativeLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginEnd="5dp">-->
+
+
+<!--                <TextView-->
+<!--                    android:id="@+id/review3"-->
+<!--                    android:layout_width="326dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginLeft="16dp"-->
+<!--                    android:layout_marginTop="132dp"-->
+<!--                    android:maxLines="2"-->
+<!--                    android:text="He'll want to use your yacht, and I don't want this thing smelling like fish."-->
+<!--                    android:viewportWidth="326"-->
+<!--                    android:viewportHeight="31" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/eval1"-->
+<!--                    android:layout_width="26dp"-->
+<!--                    android:layout_height="17dp"-->
+<!--                    android:layout_marginLeft="16dp"-->
+<!--                    android:layout_marginTop="0dp"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:text="@string/header"-->
+<!--                    android:textAppearance="@style/header" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/score1"-->
+<!--                    android:layout_width="21dp"-->
+<!--                    android:layout_height="15dp"-->
+<!--                    android:layout_marginStart="56dp"-->
+<!--                    android:layout_marginTop="0dp"-->
+<!--                    android:hint="5.4"-->
+<!--                    android:text="" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/review1"-->
+<!--                    android:layout_width="326dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:layout_marginLeft="16dp"-->
+<!--                    android:layout_marginTop="18dp"-->
+<!--                    android:maxLines="2"-->
+<!--                    android:text="He'll want to use your yacht, and I don't want this thing smelling like fish."-->
+<!--                    android:viewportWidth="326"-->
+<!--                    android:viewportHeight="31" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/eval2"-->
+<!--                    android:layout_width="26dp"-->
+<!--                    android:layout_height="17dp"-->
+<!--                    android:layout_marginLeft="16dp"-->
+<!--                    android:layout_marginTop="60dp"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:text="@string/header"-->
+<!--                    android:textAppearance="@style/header" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/score2"-->
+<!--                    android:layout_width="21dp"-->
+<!--                    android:layout_height="15dp"-->
+<!--                    android:layout_marginStart="56dp"-->
+<!--                    android:layout_marginTop="60dp"-->
+<!--                    android:hint="5.2"-->
+<!--                    android:text="" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/review2"-->
+<!--                    android:layout_width="326dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:layout_marginLeft="16dp"-->
+<!--                    android:layout_marginTop="77dp"-->
+<!--                    android:maxLines="2"-->
+<!--                    android:text="He'll want to use your yacht, and I don't want this thing smelling like fish."-->
+<!--                    android:viewportWidth="326"-->
+<!--                    android:viewportHeight="31" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/eval3"-->
+<!--                    android:layout_width="26dp"-->
+<!--                    android:layout_height="17dp"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginLeft="16dp"-->
+<!--                    android:layout_marginTop="115dp"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:text="@string/header"-->
+<!--                    android:textAppearance="@style/header" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/score3"-->
+<!--                    android:layout_width="21dp"-->
+<!--                    android:layout_height="15dp"-->
+<!--                    android:layout_alignParentStart="true"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginStart="56dp"-->
+<!--                    android:layout_marginTop="115dp"-->
+<!--                    android:hint="5.1"-->
+<!--                    android:text="" />-->
+<!--                -->
+<!--            </RelativeLayout>-->
         </RelativeLayout>
 
     </RelativeLayout>
