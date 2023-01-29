@@ -10,7 +10,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 
-class SignupActivity : AppCompatActivity() {
+class Signup : AppCompatActivity() {
 
     //변수 선언
     lateinit var sign_up_name : EditText
@@ -54,7 +54,7 @@ class SignupActivity : AppCompatActivity() {
                     sqlDB.close()
 
                     //회원가입 완료 창 띄우기
-                    var intent = Intent(this, Signup_CompleteActivity::class.java)
+                    var intent = Intent(this, Signup_Complete::class.java)
                     startActivity(intent)
                 }
                 else { //비번 칸과 비번 확인 칸이 다르면 회원가입 실패

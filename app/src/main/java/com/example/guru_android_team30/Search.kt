@@ -10,11 +10,10 @@ import android.widget.*
 
 class Search : AppCompatActivity() {
 
-    lateinit var search_button : ImageButton
     lateinit var search_edit : EditText
 
     lateinit var calender : ImageButton
-    lateinit var house : ImageButton
+    lateinit var main : ImageButton
     lateinit var writing : ImageButton
 
 
@@ -22,21 +21,18 @@ class Search : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
 
-        search_button = findViewById(R.id.search_button)
         search_edit = findViewById(R.id.search_edit)
 
         calender = findViewById(R.id.calender)
-        house = findViewById(R.id.house)
+        main = findViewById(R.id.main)
         writing = findViewById(R.id.writing)
-
-
 
 
         calender.setOnClickListener {
             Toast.makeText(this, "calender", Toast.LENGTH_SHORT).show()
         }
 
-        house.setOnClickListener {
+        main.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
 

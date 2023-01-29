@@ -15,7 +15,7 @@
 
         <!-- 로그인 페이지 -->
         <activity
-            android:name=".LoginActivity"
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +29,7 @@
 
         <!-- 회원가입 페이지 -->
         <activity
-            android:name=".SignupActivity"
+            android:name=".Signup"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -38,7 +38,7 @@
 
         <!-- 회원가입 완료 페이지 -->
         <activity
-            android:name=".Signup_CompleteActivity"
+            android:name=".Signup_Complete"
             android:exported="true">
 
             <meta-data
@@ -90,6 +90,18 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <!--작성 팝업-->
+        <activity
+            android:name=".Write_popup"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value=""/>
+        </activity>
+
+
     </application>
 
 </manifest>

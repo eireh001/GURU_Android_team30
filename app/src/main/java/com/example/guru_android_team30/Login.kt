@@ -10,7 +10,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 
-class LoginActivity : AppCompatActivity() {
+class Login : AppCompatActivity() {
 
     //변수 선언
     lateinit var email_edt : EditText
@@ -18,7 +18,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var login_button : ImageButton
     lateinit var sign_up : TextView
 
-    lateinit var myHelper: SignupActivity.myDBHelper
+    lateinit var myHelper: Signup.myDBHelper
     lateinit var sqlDB : SQLiteDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
         login_button = findViewById(R.id.Login_button)
         sign_up = findViewById(R.id.Sign_up)
 
-        myHelper = SignupActivity().myDBHelper(this)
+        myHelper = Signup().myDBHelper(this)
 
 
         //로그인 버튼 클릭시 리스너 구현
@@ -70,7 +70,7 @@ class LoginActivity : AppCompatActivity() {
 
         //회원가입 창 띄우기
         sign_up.setOnClickListener {
-            var intent = Intent (this, SignupActivity::class.java)
+            var intent = Intent (this, Signup::class.java)
             startActivity(intent)
         }
     }
