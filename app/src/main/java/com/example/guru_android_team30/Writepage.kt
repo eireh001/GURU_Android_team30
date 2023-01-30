@@ -32,6 +32,8 @@ class Writepage : AppCompatActivity() {
     lateinit var writeDB : WriteDB
     lateinit var sqlDB : SQLiteDatabase
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_writepage)
@@ -63,14 +65,14 @@ class Writepage : AppCompatActivity() {
 
             if(title.isEmpty() || writer.isEmpty() || publisher.isEmpty()
                 || date_reading.isEmpty() || date_writing.isEmpty()) {
-                Toast.makeText(this, "모두 입력해주세요.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "모두 입력해주세요.", Toast.LENGTH_SHORT).show()
             } else {
                 sqlDB = writeDB.writableDatabase
                 sqlDB.execSQL("INSERT INTO WRITE VALUES ('$title', '$writer', '$publisher', "+
                                "'$date_reading', '$date_writing', '$read_record');")
                 sqlDB.close()
 
-                Toast.makeText(this, "독서 기록장이 등록되었습니다.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "독서 기록장이 등록되었습니다.", Toast.LENGTH_SHORT).show()
                 var intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
@@ -81,7 +83,7 @@ class Writepage : AppCompatActivity() {
         }
 
         house.setOnClickListener {
-            var intent = Intent(this, ReviewWrite::class.java)
+            var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
