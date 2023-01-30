@@ -19,7 +19,7 @@ class ReviewPageDetail : AppCompatActivity() {
 
     lateinit var writer : TextView
     lateinit var publisher : TextView
-    lateinit var genre : EditText
+    lateinit var title : TextView
     lateinit var date_publishing : TextView
 
     lateinit var layout : LinearLayout
@@ -44,7 +44,7 @@ class ReviewPageDetail : AppCompatActivity() {
 
         writer = findViewById(R.id.writer)
         publisher = findViewById(R.id.publisher)
-        genre = findViewById(R.id.genre)
+        title = findViewById(R.id.title)
         date_publishing = findViewById(R.id.date_publishing)
 
 
@@ -69,6 +69,21 @@ class ReviewPageDetail : AppCompatActivity() {
 //            eval = cursor.getInt((cursor.getColumnIndex("eval")))
 //            str_review = cursor.getString((cursor.getColumnIndex("review_record"))).toString()
             str_datepublishing = cursor.getString((cursor.getColumnIndex("date_publishing"))).toString()
+            var eval1 = cursor.getInt((cursor.getColumnIndex("eval")))
+            var str_review1 = cursor.getString((cursor.getColumnIndex("review_record"))).toString()
+
+            var layout_item : LinearLayout = LinearLayout(this)
+            layout_item.orientation = LinearLayout.VERTICAL
+
+            var tvEval : TextView = TextView(this)
+            tvEval.text = "평가   " + eval1.toString()
+            layout_item.addView(tvEval)
+
+            var tvReview : TextView = TextView(this)
+            tvReview.text = str_review1 + "\n"
+            layout_item.addView(tvReview)
+
+            layout.addView(layout_item)
         }
 
         var num : Int = 0
@@ -93,10 +108,12 @@ class ReviewPageDetail : AppCompatActivity() {
             num++;
         }
 
+
         cursor.close()
         sqlDB.close()
         myHelper.close()
 
+        title.text = str_title
         writer.text = str_writer
         publisher.text = str_publisher
         date_publishing.text = str_datepublishing

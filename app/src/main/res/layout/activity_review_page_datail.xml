@@ -15,7 +15,7 @@
         android:layout_marginTop="90dp"/>
 
     <TextView
-        android:id="@+id/writer"
+        android:id="@+id/title"
         android:layout_width="104dp"
         android:layout_height="37dp"
         android:layout_gravity="center_horizontal|center"
@@ -23,7 +23,7 @@
         android:layout_marginTop="220dp"
         android:background="@null"
         android:gravity="center"
-        android:hint="작가 작성란"
+        android:hint="제목 작성란"
         android:maxLines="1"
         android:text="@string/subhead_ek1_string"
         android:textColor="@color/subhead_color"
@@ -45,8 +45,8 @@
         android:textSize="14sp" />
 
 
-    <EditText
-        android:id="@+id/genre"
+    <TextView
+        android:id="@+id/writer"
         android:layout_width="104dp"
         android:layout_height="37dp"
         android:layout_alignParentEnd="false"
@@ -55,7 +55,7 @@
         android:layout_marginTop="250dp"
         android:background="@null"
         android:gravity="center"
-        android:hint="장르 작성란"
+        android:hint="작가 작성란"
         android:maxLines="1"
         android:text="@string/subhead_ek3_string"
         android:textColor="@color/subhead_color"

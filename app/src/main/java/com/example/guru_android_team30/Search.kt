@@ -8,6 +8,8 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import androidx.core.view.indices
+import androidx.core.view.size
 import com.example.guru_android_team30.databinding.ActivityMainBinding
 import com.example.guru_android_team30.databinding.ActivitySearchBinding
 
@@ -23,6 +25,7 @@ class Search : AppCompatActivity() {
     lateinit var sqlDB : SQLiteDatabase
 
     private lateinit var listData: ArrayList<String>
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +49,7 @@ class Search : AppCompatActivity() {
 
         lateinit var strReviewTitle : String
 
-        val ref = arrayListOf<String>()
+        var ref = arrayListOf<String>()
         while (cursor.moveToNext()) {
             strReviewTitle = cursor.getString(cursor.getColumnIndex("title")).toString()
             ref.add(strReviewTitle)
@@ -77,16 +80,17 @@ class Search : AppCompatActivity() {
             }
         })
 
+
         var i :Int=0
         for (i in ref.indices) {
             listData = ArrayList(ref)
+            binding.reviewList.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
+                var intent = Intent(this, ReviewPageDetail::class.java)
+                intent.putExtra("intent_name",ref[i])
+                startActivity(intent)
+            }
         }
         binding.reviewList.isClickable = true
-        binding.reviewList.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
-            var intent = Intent(this, ReviewPageDetail::class.java)
-            intent.putExtra("intent_name",listData[i])
-            startActivity(intent)
-        }
 
 
 
