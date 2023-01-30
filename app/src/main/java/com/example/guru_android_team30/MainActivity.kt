@@ -8,6 +8,9 @@ import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.marginLeft
+import androidx.core.view.marginRight
+import androidx.core.view.marginStart
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,8 +36,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var write_title2 : TextView
     lateinit var write_content2 : TextView
 
+    // 리뷰 layout
     lateinit var layout : LinearLayout
-
+    lateinit var layout2 : LinearLayout
+    lateinit var layout3 : LinearLayout
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,6 +56,9 @@ class MainActivity : AppCompatActivity() {
         write_plus = findViewById(R.id.Write_plus)
 
         layout = findViewById(R.id.main_review)
+        layout2 = findViewById(R.id.main2_review)
+        layout3 = findViewById(R.id.main3_review)
+
 
         // DB 불러오기
         myHelper = ReviewWrite().ReviewDB(this)
@@ -65,43 +73,115 @@ class MainActivity : AppCompatActivity() {
         write_content2 = findViewById(R.id.Write_content2)
 
 
-        //리뷰
+        //리뷰 기록
         var cursor : Cursor
         cursor = sqlDB.rawQuery("SELECT * FROM REVIEW", null)
 
         var cursor2 : Cursor
         cursor2 = sqlDB.rawQuery("SELECT *, count(*) FROM REVIEW group by title", null)
 
+        var cursor4 : Cursor
+        cursor4 = sqlDB.rawQuery("SELECT *, count(*) FROM REVIEW group by eval", null)
+        
 
         var num : Int = 0
 
-        while(cursor2.moveToNext()) {
+        // 리뷰 작성하는데 가장 최근에 작성된 리뷰
+        if (cursor2.moveToLast())
+        {
             var str_title = cursor2.getString(cursor.getColumnIndex("title")).toString()
-            var eval = cursor2.getInt((cursor.getColumnIndex("eval")))
-
             var count = cursor2.getInt(cursor.getColumnCount())
-
-            num++;
 
             var layout_item : LinearLayout = LinearLayout(this)
             layout_item.orientation = LinearLayout.VERTICAL
             layout_item.id = num
 
             var tvTitle : TextView = TextView(this)
-            tvTitle.text = str_title + "\t\t\t\t\t\t\t\t\t\t\t"
+            tvTitle.text = str_title
+            tvTitle.width = 255
+            tvTitle.setTextSize(10F)
             layout_item.addView(tvTitle)
 
-            var tvEval : TextView = TextView(this)
-            tvEval.text = eval.toString()
+            var eval3 = cursor2.getInt(cursor.getColumnIndex("eval"))
+            var tvEval: TextView = TextView(this)
+            tvEval.text = "평점 평균 :   " + eval3.toString()
+            tvEval.setTextSize(10F)
             layout_item.addView(tvEval)
 
             var tvNum : TextView = TextView(this)
-            tvNum.text = count.toString()
+            tvNum.text = "리뷰 개수 :   " + count.toString()
+            tvNum.setTextSize(10F)
             layout_item.addView(tvNum)
 
             layout.addView(layout_item)
+            num++
 
         }
+
+        // 리뷰 작성하는데 최근에 작성된 리뷰
+        if (cursor2.moveToPrevious())
+        {
+            var str_title2 = cursor2.getString(cursor.getColumnIndex("title")).toString()
+            var count2 = cursor2.getInt(cursor.getColumnCount())
+
+            var layout_item2 : LinearLayout = LinearLayout(this)
+            layout_item2.orientation = LinearLayout.VERTICAL
+            layout_item2.id = num
+
+            var tvTitle2 : TextView = TextView(this)
+            tvTitle2.text = str_title2
+            tvTitle2.width = 255
+            tvTitle2.setTextSize(10F)
+            layout_item2.addView(tvTitle2)
+
+                    var eval2 = cursor2.getInt(cursor.getColumnIndex("eval"))
+                    var tvEval2 : TextView = TextView(this)
+                    tvEval2.text = "평점 평균 :   " + eval2.toString()
+                    tvEval2.setTextSize(10F)
+                    layout_item2.addView(tvEval2)
+
+            var tvNum2 : TextView = TextView(this)
+            tvNum2.text = "리뷰 개수 :   " + count2.toString()
+            tvNum2.setTextSize(10F)
+            layout_item2.addView(tvNum2)
+
+            layout2.addView(layout_item2)
+            num++
+
+        }
+
+        // 리뷰 작성하는데 마지막에 작성된 리뷰
+        if (cursor2. moveToFirst())
+        {
+            var str_title3 = cursor2.getString(cursor.getColumnIndex("title")).toString()
+            var count3 = cursor2.getInt(cursor.getColumnCount())
+
+            var layout_item3 : LinearLayout = LinearLayout(this)
+            layout_item3.orientation = LinearLayout.VERTICAL
+            layout_item3.id = num
+
+            var tvTitle3 : TextView = TextView(this)
+            tvTitle3.text = str_title3
+            tvTitle3.width = 255
+            tvTitle3.setTextSize(10F)
+            layout_item3.addView(tvTitle3)
+
+                var eval3 = cursor2.getInt(cursor.getColumnIndex("eval"))
+                var tvEval3 : TextView = TextView(this)
+                tvEval3.text = "평점 평균 :   " + eval3.toString()
+                tvEval3.setTextSize(10F)
+                layout_item3.addView(tvEval3)
+
+            var tvNum3 : TextView = TextView(this)
+            tvNum3.text = "리뷰 개수 :   " + count3.toString()
+            tvNum3.setTextSize(10F)
+            layout_item3.addView(tvNum3)
+
+            layout3.addView(layout_item3)
+            num++
+
+        }
+
 
         cursor2.close()
         sqlDB.close()
@@ -109,22 +189,22 @@ class MainActivity : AppCompatActivity() {
 
 
         //독서기록
-        var cursor3 : Cursor = sqlWriteDB.rawQuery("SELECT * FROM WRITE;", null)
-
-        cursor3.moveToLast()
-        var title = cursor3.getString(0)
-        var content = cursor3.getString(5)
-        write_title1.setText(title)
-        write_content1.setText(content)
-
-        cursor3.moveToPrevious()
-        title = cursor3.getString(0)
-        content = cursor3.getString(5)
-        write_title2.setText(title)
-        write_content2.setText(content)
-
-        cursor3.close()
-        sqlWriteDB.close()
+//        var cursor3 : Cursor = sqlWriteDB.rawQuery("SELECT * FROM WRITE;", null)
+//
+//        cursor3.moveToLast()
+//        var title = cursor3.getString(0)
+//        var content = cursor3.getString(5)
+//        write_title1.setText(title)
+//        write_content1.setText(content)
+//
+//        cursor3.moveToPrevious()
+//        title = cursor3.getString(0)
+//        content = cursor3.getString(5)
+//        write_title2.setText(title)
+//        write_content2.setText(content)
+//
+//        cursor3.close()
+//        sqlWriteDB.close()
 
 
         // 검색 아이콘 클릭
