@@ -12,20 +12,24 @@ import android.widget.TextView
 import android.widget.Toast
 
 class Writepage : AppCompatActivity() {
+    //책 정보
     lateinit var title : EditText
     lateinit var writer : EditText
     lateinit var publisher : EditText
     lateinit var date_reading : EditText
     lateinit var date_writing : EditText
 
+    //기록
     lateinit var read_record : EditText
     lateinit var check : ImageButton
 
+    //네비게이션 바
     lateinit var calender : ImageButton
     lateinit var house : ImageButton
     lateinit var writing : ImageButton
 
-    lateinit var writeDB : ReviewWrite.ReviewDB
+    //DB
+    lateinit var writeDB : WriteDB
     lateinit var sqlDB : SQLiteDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +49,7 @@ class Writepage : AppCompatActivity() {
         house = findViewById(R.id.house)
         writing = findViewById(R.id.writing)
 
-        writeDB = ReviewWrite().ReviewDB(this)
+        writeDB = WriteDB(this)
 
 
         check.setOnClickListener {
@@ -59,14 +63,14 @@ class Writepage : AppCompatActivity() {
 
             if(title.isEmpty() || writer.isEmpty() || publisher.isEmpty()
                 || date_reading.isEmpty() || date_writing.isEmpty()) {
-                Toast.makeText(this, "모두 입력해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "모두 입력해주세요.", Toast.LENGTH_LONG).show()
             } else {
                 sqlDB = writeDB.writableDatabase
                 sqlDB.execSQL("INSERT INTO WRITE VALUES ('$title', '$writer', '$publisher', "+
                                "'$date_reading', '$date_writing', '$read_record');")
                 sqlDB.close()
 
-                Toast.makeText(this, "독서 기록장이 등록되었습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "독서 기록장이 등록되었습니다.", Toast.LENGTH_LONG).show()
                 var intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
@@ -84,6 +88,18 @@ class Writepage : AppCompatActivity() {
         writing.setOnClickListener {
             var intent = Intent(this, Write_popup::class.java)
             startActivity(intent)
+        }
+    }
+
+    inner class WriteDB(context : Context) :SQLiteOpenHelper(context, "writeDB", null, 1) {
+        override fun onCreate(db: SQLiteDatabase?) {
+            db!!.execSQL("CREATE TABLE WRITE (title CHAR(20), writer CHAR(20)," +
+                    "publisher CHAR(20), date_reading DATE, date_writing DATE, read_record TEXT);")
+        }
+
+        override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+            db!!.execSQL("DROP TABLE IF EXISTS WRITE")
+            onCreate(db)
         }
     }
 }
