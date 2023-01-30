@@ -135,7 +135,7 @@ class ReviewWrite : AppCompatActivity() {
         }
 
         main.setOnClickListener {
-            var intent = Intent(this, ReviewWrite::class.java)
+            var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 

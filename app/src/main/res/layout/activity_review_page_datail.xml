@@ -18,14 +18,12 @@
         android:id="@+id/title"
         android:layout_width="104dp"
         android:layout_height="37dp"
-        android:layout_gravity="center_horizontal|center"
         android:layout_marginLeft="85dp"
         android:layout_marginTop="220dp"
         android:background="@null"
-        android:gravity="center"
         android:hint="제목 작성란"
+        android:gravity="left|center"
         android:maxLines="1"
-        android:text="@string/subhead_ek1_string"
         android:textColor="@color/subhead_color"
         android:textSize="14sp" />
 
@@ -34,13 +32,12 @@
         android:layout_width="104dp"
         android:layout_height="37dp"
         android:layout_gravity="center_horizontal|center"
-        android:layout_marginLeft="270dp"
+        android:layout_marginLeft="265dp"
         android:layout_marginTop="220dp"
         android:background="@null"
-        android:gravity="center"
+        android:gravity="left|center"
         android:hint="출판사 작성란"
         android:maxLines="1"
-        android:text="@string/subhead_ek2_string"
         android:textColor="@color/subhead_color"
         android:textSize="14sp" />
 
@@ -54,23 +51,21 @@
         android:layout_marginLeft="85dp"
         android:layout_marginTop="250dp"
         android:background="@null"
-        android:gravity="center"
+        android:gravity="left|center"
         android:hint="작가 작성란"
         android:maxLines="1"
-        android:text="@string/subhead_ek3_string"
         android:textColor="@color/subhead_color"
         android:textSize="14sp" />
 
     <TextView
         android:id="@+id/date_publishing"
-        android:layout_width="84dp"
-        android:layout_height="30dp"
+        android:layout_width="99dp"
+        android:layout_height="36dp"
         android:layout_gravity="center_horizontal|center"
-        android:layout_marginLeft="270dp"
+        android:layout_marginLeft="265dp"
         android:layout_marginTop="250dp"
-        android:gravity="center"
+        android:gravity="left|center"
         android:hint="20nn.nn.nn"
-        android:text="@string/subhead_ek4_string"
         android:textColor="@color/subhead_color"
         android:textSize="14sp" />
 

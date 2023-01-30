@@ -189,22 +189,22 @@ class MainActivity : AppCompatActivity() {
 
 
         //독서기록
-//        var cursor3 : Cursor = sqlWriteDB.rawQuery("SELECT * FROM WRITE;", null)
-//
-//        cursor3.moveToLast()
-//        var title = cursor3.getString(0)
-//        var content = cursor3.getString(5)
-//        write_title1.setText(title)
-//        write_content1.setText(content)
-//
-//        cursor3.moveToPrevious()
-//        title = cursor3.getString(0)
-//        content = cursor3.getString(5)
-//        write_title2.setText(title)
-//        write_content2.setText(content)
-//
-//        cursor3.close()
-//        sqlWriteDB.close()
+        var cursor3 : Cursor = sqlWriteDB.rawQuery("SELECT * FROM WRITE;", null)
+
+        cursor3.moveToLast()
+        var title = cursor3.getString(0)
+        var content = cursor3.getString(5)
+        write_title1.setText(title)
+        write_content1.setText(content)
+
+        cursor3.moveToPrevious()
+        title = cursor3.getString(0)
+        content = cursor3.getString(5)
+        write_title2.setText(title)
+        write_content2.setText(content)
+
+        cursor3.close()
+        sqlWriteDB.close()
 
 
         // 검색 아이콘 클릭
